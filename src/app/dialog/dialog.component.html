@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Add User</h1>
+<div mat-dialog-content>
+
+   <form [formGroup]="userForm">
+    <mat-form-field appearance="legacy" >
+        <mat-label >Last Name</mat-label>
+        <input formControlName="lastName" matInput placeholder="Last Name">
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>First Name</mat-label>
+        <input formControlName="firstName" matInput placeholder="First Name">
+
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Middle Name</mat-label>
+        <input formControlName="middleName" matInput placeholder="Middle Name">
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-select formControlName="tyoe" placeholder="Type">
+        <mat-option value="Student">Student</mat-option>
+        <mat-option value="Teacher">Teacher</mat-option>
+    </mat-select>
+      </mat-form-field>
+      <mat-form-field  appearance="legacy">
+        <mat-label>Birth day</mat-label>
+        <input formControlName="birthday" matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+   </form>
+
+</div>
+<div mat-dialog-actions [align]="'end'">
+    
+    <button mat-raised-button color="warn" mat-dialog-close>Close </button>
+    <button mat-raised-button color="primary" (click)="addUser()">Save </button>
+
+
+</div>
