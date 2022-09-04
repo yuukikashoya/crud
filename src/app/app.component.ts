@@ -13,7 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class AppComponent implements OnInit{
   title = 'crud';
-  displayedColumns: string[] = ['id', 'lastName', 'firstName','middleName','type', 'birthday'];
+  displayedColumns: string[] = ['id', 'lastName', 'firstName','middleName','type', 'birthday', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
